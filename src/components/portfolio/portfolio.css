@@ -1,0 +1,220 @@
+.portfolio__container {
+    display:grid ;
+    grid-template-columns: repeat(3, 1fr);
+    gap:2.5rem;
+    margin-bottom: 2rem;
+
+}
+
+.portfolio__item {
+    background:var(--color-bg-variant);
+    padding:1.2rem;
+    border-radius:2rem ;
+    border:1px solid transparent;
+    transition:var(--transition);
+}
+
+.portfolio__item-image-display-block{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    backface-visibility: hidden;
+    transform:translate3d(0.1px, 0.1px, 0.1px);
+    -webkit-transform: translate3d(0.1px, 0.1px, 0.1px);
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+
+  
+
+    /*new stuff*/
+    -webkit-backface-visibility: hidden;
+  
+}
+
+
+
+.portfolio__item-image img{
+       
+    border-radius:1rem;
+    /*height: 200px;*/
+    width: 300px;
+    height: 300px;
+    margin:0 auto;
+     
+}
+
+.co-op-fade{
+    border-radius:1rem;
+    height: 200px;
+}
+
+.portfolio__item-image video{
+        
+    border-radius:1rem;
+    /*height: 200px;*/
+}
+
+.portfolio__adjust-image{
+        
+    border-radius:1rem;
+    
+}
+
+/*============ MY FAKE GIF ================*/
+
+#faux-gif {
+    position: relative;
+    top: 0; left: 3%;  bottom: 0;
+    border-radius: 1rem;
+    margin: auto;
+    background-image: url('../../assets/c1.png');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: 600px 300px;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    width: 100%;
+    height: 100%;
+    animation: giffy 1s  infinite linear;
+    z-index:0;
+    transform: translateZ(0.1px);
+    -webkit-transform: translate3d(0.1px, 0.1px, 0.1px);
+    transition:  -webkit-transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    
+    
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+   
+   
+  }
+
+  .faux-gif-translate {
+    transform: translateZ(0.1px);
+    -webkit-transform: translate3d(0.1px, 0.1px, 0.1px);
+    transition:  -webkit-transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    
+   
+    
+  }
+  
+  /*#faux-gif:hover {
+    animation-play-state:paused;
+  }*/
+  
+  @keyframes giffy {
+    0%   { background-image: url('../../assets/c1.png'); } 
+    11.11%  { background-image: url('../../assets/c2.png'); }
+    22.22%  { background-image: url('../../assets/c3.png');}
+    33.32%  { background-image: url('../../assets/c4.png'); }
+    44.43%  { background-image: url('../../assets/c5.png'); }
+    55.54%  { background-image: url('../../assets/c6.png'); }
+    66.65%  { background-image: url('../../assets/c7.png'); }
+    77.76% { background-image: url('../../assets/c8.png'); }
+    88.87% { background-image: url('../../assets/c9.png'); }
+    99.98%   { background-image: url('../../assets/c1.png'); } 
+    100%   { background-image: url('../../assets/c1.png'); } 
+  }
+
+  @-webkit-keyframes giffy {
+    0%   { -webkit-background-image: url('../../assets/c1.png'); } 
+    11.11%  {-webkit-background-image: url('../../assets/c2.png'); }
+    22.22%  { -webkit-background-image: url('../../assets/c3.png');}
+    33.32%  { -webkit-background-image: url('../../assets/c4.png'); }
+    44.43%  { -webkit-background-image: url('../../assets/c5.png'); }
+    55.54%  { -webkit-background-image: url('../../assets/c6.png'); }
+    66.65%  { -webkit-background-image: url('../../assets/c7.png'); }
+    77.76% { -webkit-background-image: url('../../assets/c8.png'); }
+    88.87% { -webkit-background-image: url('../../assets/c9.png'); }
+    99.98%   { -webkit-background-image: url('../../assets/c1.png'); } 
+    100%   { -webkit-background-image: url('../../assets/c1.png'); } 
+  }
+
+  /* ====================== MY FAKE GIF ENDING ==================*/
+
+.portfolio__item:hover {
+    border-color:var(--color-primary-variant);
+    background:transparent;
+
+}
+
+.portfolio__item h3 {
+    margin:1.2rem 0 2rem;
+}
+
+
+
+.portfolio__item-cta {
+    display:flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom:1rem;
+}
+
+.portfolio__item__type{
+display: flex !important;
+flex-direction: column;
+justify-content:right;
+width:var(--container-width-lg);
+margin-top:3rem;
+margin-bottom: 2rem;
+margin-left:calc(((var(--container-width-lg))/4) );
+color:var(--color-primary);
+
+}
+
+
+.portfolio__divider{
+ color:var(--color-primary);
+ width: 100%;
+ display: block ;
+ margin-top:15px;
+ border-bottom:solid 1px var(--color-primary);
+ 
+
+}
+
+/*=======================VIDEO CLASSES=========================*/
+.bway-page-vid{
+    height: 180px;  /*video 1*/
+}
+
+.coop-vid{
+    height: 270px; 
+}
+
+
+
+/* =================== MEDIA QUERIES (MEDIUM DEVICES) ================ */
+
+@media screen and (max-width:1024px) {
+     .portfolio__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+     }
+
+     .portfolio__item__type{
+        width:var(--container-width-md);
+        margin-left:calc(((var(--container-width-md))/4) - 80px);
+        
+        }
+ 
+ }
+ 
+ 
+ /* ================= MEDIA QUERIES (SMALL DEVICES) ==================== */
+ @media screen and (max-width:600px) {
+   
+    .portfolio__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+     }
+
+
+     .portfolio__item__type{
+        width:var(--container-width-lg);
+        margin-left:calc(((var(--container-width-lg))/4) - 30px);
+        
+        }
+ 
+ }
